@@ -84,7 +84,6 @@ export default function Home() {
         );
         const data = await response.json();
         setPriceData(data);
-        console.log(data);
       } catch (error) {
         setError(
           "Error occurred while fetching prices. Please try again later."
@@ -94,7 +93,7 @@ export default function Home() {
 
     fetchTodayPrices();
 
-    const intervalId = setInterval(fetchTodayPrices, 60 * 5 * 1000);
+    const intervalId = setInterval(fetchTodayPrices, 60 * 1000);
 
     return () => {
       if (intervalId) {
